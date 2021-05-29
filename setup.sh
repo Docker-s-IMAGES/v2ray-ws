@@ -14,7 +14,7 @@ else
     uuid="$3"
 fi
 
-sed -i "s/uuid/${uuid}/" /src/v2ray.json
+sed -i -e "s@UUID@${uuid}@" -e "s@PATH@${path}@" /src/v2ray.json
 
 echo "安卓客户端 v2rayNG 配置链接："
 echo -e "vmess://\c"
