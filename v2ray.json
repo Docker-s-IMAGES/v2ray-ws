@@ -6,13 +6,16 @@
       "settings": {
         "clients": [
           {
-            "id": "uuid",
+            "id": "UUID",
             "alterId": 64
           }
         ]
       },
       "streamSettings": {
-        "network":"ws"
+        "network":"ws",
+        "wsSettings": {
+          "path": "PATH"
+        }
       }
     }
   ],
