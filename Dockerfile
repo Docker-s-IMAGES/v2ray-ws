@@ -9,7 +9,7 @@ ENV V2RAY_DOWNLOAD_URL https://github.com/v2fly/v2ray-core/releases/download/${V
 WORKDIR /src
 
 RUN apk upgrade --update \
-    && apk add bash tzdata curl \
+    && apk add util-linux tzdata curl \
     && mkdir -p ${V2RAY_LOG_DIR} ${V2RAY_CONFIG_DIR} /tmp/v2ray \
     && curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip ${V2RAY_DOWNLOAD_URL} \
     && pwd \
@@ -18,11 +18,11 @@ RUN apk upgrade --update \
     && mv /tmp/v2ray/v2ctl /usr/bin \
     && chmod +x /usr/bin/v2ray \
     && chmod +x /usr/bin/v2ctl \
-    && apk del curl \
     && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \
     && echo ${TZ} > /etc/timezone \
-    && rm -rf /tmp/v2ray /var/cache/apk/*
+    && rm -rf /tmp/v2ray /var/cache/apk/* \
+    && apk del curl
 
 COPY . /src
 
-ENTRYPOINT [ "bash", "/src/setup.sh"]
+ENTRYPOINT [ "/src/setup.sh"]
