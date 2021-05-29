@@ -25,4 +25,4 @@ RUN apk upgrade --update \
 
 COPY . /src
 
-ENTRYPOINT [ "/src/setup.sh"]
+ENTRYPOINT [ "sh", "/src/setup.sh"]
