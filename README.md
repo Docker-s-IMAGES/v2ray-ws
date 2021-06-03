@@ -1,5 +1,9 @@
 # v2ray-ws
 
+![Docker Pulls](https://img.shields.io/docker/pulls/abersheeran/v2ray-ws)
+
+![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/abersheeran/v2ray-ws)
+
 一键启动 v2ray with websocket
 
 ```
