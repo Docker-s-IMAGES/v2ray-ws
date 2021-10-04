@@ -1,11 +1,10 @@
 # v2ray-ws
 
-![Docker Pulls](https://img.shields.io/docker/pulls/abersheeran/v2ray-ws) ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/abersheeran/v2ray-ws)
-
 一键启动 v2ray with websocket
 
 ```
-docker run --rm --name v2ray -p "127.0.0.1:2333:2333" -d ghcr.io/docker-s-images/v2ray-ws:main DOMAIN [PATH] [UUID]
+docker run --rm --name v2ray -p "127.0.0.1:2333:2333" -d \
+  ghcr.io/docker-s-images/v2ray-ws:main DOMAIN [PATH] [UUID]
 ```
 
 - PATH：默认值 `/confusion`，v2ray 服务所支持的路径，也是前置反向代理需要配置的路径。
